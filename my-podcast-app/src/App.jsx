@@ -30,7 +30,7 @@ function App() {
   }, [])
 
   if(loading) {
-    return 
+    return (
     <div className='loading-container'>
       <div>
         
@@ -39,22 +39,36 @@ function App() {
         <p className="loading-text">Fetching data... please wait.</p>
       </div>
     </div>
+    )
   }
 
   if(error) {
-    return
+    return (
     <div className="error-container">
       <p className="error-message">
         Failed to fetch tasks from API.
       </p>
     </div>
+    )
   }
 
   return (
-    <>
+  <>
+    {podcasts.map( (podcast) => (
+      <section key={podcast.id} id={podcast.id}>
+        <img className="podcast-img" src={podcast.image} alt={podcast.title} />
+        <h2 className="title">{podcast.title}</h2>
+        <p className="podcast-season">Season {podcast.seasons}</p>
+        <div className="genres-list">
+          {podcast.genres}
+        </div>
+        <p className="date">Updated: <span>{podcast.updated}</span></p>
+      </section>
+    ))}
+  </>
+)
 
-    </>
-  )
+
 }
 
 export default App
