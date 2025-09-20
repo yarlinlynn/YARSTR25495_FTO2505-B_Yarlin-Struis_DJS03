@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import PodcastCard from '../components/PodcastCard/PodcastCard';
 
 function App() {
   const [podcasts, setPodcast] = useState([]);
@@ -46,7 +47,7 @@ function App() {
     return (
     <div className="error-container">
       <p className="error-message">
-        Failed to fetch tasks from API.
+        Failed to fetch Podcasts from API. Please refresh webpage
       </p>
     </div>
     )
@@ -54,17 +55,16 @@ function App() {
 
   return (
   <>
-    {podcasts.map( (podcast) => (
-      <section key={podcast.id} id={podcast.id}>
-        <img className="podcast-img" src={podcast.image} alt={podcast.title} />
-        <h2 className="title">{podcast.title}</h2>
-        <p className="podcast-season">Season {podcast.seasons}</p>
-        <div className="genres-list">
-          {podcast.genres}
-        </div>
-        <p className="date">Updated: <span>{podcast.updated}</span></p>
+    <main className="main-content">
+      <section className="your-library"></section>
+      
+      <section className="rendered-podcast">
+        {podcasts.map( (podcast) => (
+          <PodcastCard  key={podcast.id} podcast={podcast} />
+        ))}
       </section>
-    ))}
+    </main>
+    
   </>
 )
 
