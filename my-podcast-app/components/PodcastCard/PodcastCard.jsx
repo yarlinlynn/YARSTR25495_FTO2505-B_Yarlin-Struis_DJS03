@@ -1,6 +1,9 @@
 import "./PodcastCard.css";
+import Modal from "../components/PodcastModal/PodcastModal.jsx";
 
-function PodcastCard({podcast}) {
+function PodcastCard({ podcast, onClick }) {
+    const [openModal, setOpenModal] = useState(false)
+
     return(
         <section className="podcast-card" key={podcast.id} id={podcast.id}>
             <img className="podcast-img" src={podcast.image} alt={podcast.title}  loading="lazy"/>
