@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import PodcastCard from '../components/PodcastCard/PodcastCard';
+import Header from '../components/Header/Header.jsx'
 
-import { IoHomeOutline, IoSearch, IoFolderOpenOutline, IoPerson, IoSunny, IoMoon } from "react-icons/io5";
-import { IoHeart, IoBookmark, IoAdd } from "react-icons/io5";
+
+import { IoHeart, IoBookmark, IoAdd, IoSearch } from "react-icons/io5";
 
 function App() {
   const [podcasts, setPodcast] = useState([]);
@@ -35,32 +36,7 @@ function App() {
 
   return (
   <>
-    <header>
-      <div className="header-container">
-        <h1>🎙️ Podcast App</h1>
-
-        <div className="container">
-          <IoHomeOutline className="icon" />
-
-          <div class="search-container">
-            <IoSearch className="icon" />
-            <input className="search" type="text" placeholder="What do you want to play?" />
-            <div className="browse-btn">
-              <IoFolderOpenOutline />
-            </div>
-          </div>
-          
-        </div>
-
-        <div class="btns">
-          <IoPerson className="profile" />
-          <div className="theme-btn">
-            <IoSunny className="light-btn" />
-            <IoMoon className="dark-btn" />
-          </div>
-        </div>
-      </div>
-    </header>
+    <Header/>
 
     <main className="main-content">
       <section className="your-library">
