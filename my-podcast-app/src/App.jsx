@@ -3,7 +3,7 @@ import './App.css'
 import Header from "../components/Header/Header.jsx";
 import LibrarySidebar from "../components/Library/MyLibrary.jsx";
 import PodcastCard from "../components/PodcastCard/PodcastCard";
-import Modal from "../components/PodcastModal/PodcastModal.jsx";
+
 
 function App() {
   const [podcasts, setPodcast] = useState([]);
@@ -59,7 +59,7 @@ function App() {
               </p>
             </div>
         ) : podcasts.map( (podcast) => (
-              <PodcastCard  key={podcast.id} podcast={podcast}  onClick={ () => setOpenModal(true)} />
+              <PodcastCard  key={podcast.id} podcast={podcast} />
             ))
         } 
       </section>

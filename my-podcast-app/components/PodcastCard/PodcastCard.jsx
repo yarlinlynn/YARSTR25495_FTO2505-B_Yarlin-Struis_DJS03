@@ -1,11 +1,11 @@
 import "./PodcastCard.css";
-import Modal from "../components/PodcastModal/PodcastModal.jsx";
+
 
 function PodcastCard({ podcast, onClick }) {
-    const [openModal, setOpenModal] = useState(false)
+    // const [openModal, setOpenModal] = useState(false)
 
     return(
-        <section className="podcast-card" key={podcast.id} id={podcast.id}>
+        <section className="podcast-card" key={podcast.id} id={podcast.id} onClick={ () => setOpenModal(true)}>
             <img className="podcast-img" src={podcast.image} alt={podcast.title}  loading="lazy"/>
 
             <div className="podcast-container">
