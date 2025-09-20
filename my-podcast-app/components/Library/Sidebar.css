@@ -1,0 +1,36 @@
+
+.your-library { 
+  width: 400px;
+  padding-block: 2rem;
+  padding-inline: 1rem;
+  border-right: 1px solid var(--background-light);  
+}
+
+.library {
+  padding: 1rem;
+}
+
+.library-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.card .icon {
+  width: 70px;
+  height: 4rem;
+  background: var(--soft-indigo);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.card img {
+  width: 70px;
+  height: 4rem;
+  border-radius: 5px;
+}
