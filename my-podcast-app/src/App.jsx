@@ -3,14 +3,14 @@ import './App.css'
 import Header from "../components/Header/Header.jsx";
 // import LibrarySidebar from "../components/Library/MyLibrary.jsx";
 import PodcastCard from "../components/PodcastCard/PodcastCard";
-// import { IoList } from "react-icons/io5";
+import Modal from "../components/PodcastModal/PodcastModal.jsx";
 
 
 function App() {
   const [podcasts, setPodcast] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null)
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(null)
 
   useEffect( () => {
     const fetchPodcasts = async () => {
@@ -59,11 +59,14 @@ function App() {
               </p>
             </div>
         ) : podcasts.map( (podcast) => (
-              <PodcastCard  key={podcast.id} podcast={podcast} />
+              <PodcastCard  key={podcast.id} podcast={podcast} onClick={() => setOpenModal(podcast)}/>
             ))
         } 
       </section>
     </main>
+    {openModal && (
+      <Modal podcast={openModal} onClose={() => setOpenModal(null)} />
+    )}
     
   </>
 )

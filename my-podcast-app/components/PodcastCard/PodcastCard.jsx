@@ -7,7 +7,7 @@ function PodcastCard({ podcast, onClick }) {
     const formattedDate = format(parseISO(podcast.updated), "MMMM d, yyyy");
 
     return(
-        <section className="podcast-card" key={podcast.id} id={podcast.id} onClick={ () => setOpenModal(true)}>
+        <section className="podcast-card" key={podcast.id} id={podcast.id} onClick={onClick}>
             <img className="podcast-img" src={podcast.image} alt={podcast.title}  loading="lazy"/>
 
             <div className="podcast-container">
