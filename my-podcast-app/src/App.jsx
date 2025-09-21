@@ -40,12 +40,6 @@ function App() {
     <Header/>
 
     <main className="main-content">
-      {/* <div className="genres-container">
-          <span className="all-genres"></span>
-          <div className="filter">
-            <IoList />
-          </div>
-      </div> */}
 
       <section className="rendered-podcast">
         

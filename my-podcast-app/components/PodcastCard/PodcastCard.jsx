@@ -1,4 +1,5 @@
 import "./PodcastCard.css";
+import getGenreTitles from "../utils/getGenres.js";
 
 
 function PodcastCard({ podcast, onClick }) {
@@ -12,7 +13,11 @@ function PodcastCard({ podcast, onClick }) {
                 <h2 className="title">{podcast.title}</h2>
                 <p className="podcast-season">Season {podcast.seasons}</p>
                 <div className="genres-list">
-                    {podcast.genres}
+                    {getGenreTitles(podcast).map((title, i) => (
+                        <span key={i} className="genre">
+                        {title}
+                        </span>
+                    ))}
                 </div>
                 <p className="date">Updated: <span>{podcast.updated}</span></p>
             </div>
