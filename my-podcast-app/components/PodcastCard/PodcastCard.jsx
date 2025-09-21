@@ -2,7 +2,13 @@ import "./PodcastCard.css";
 import getGenreTitles from "../utils/getGenres.js";
 import { format, parseISO } from "date-fns";
 
-
+/**
+ * Renders a single podcast card with title, description, date, season and genres.
+ * @param {Object} props - Component props.
+ * @param {Object} props.podcast - The podcast object with id, title, description, date, season and genres.
+ * @param {Function} props.onClick - Function to call when the card is clicked, passing the podcast.
+ * @returns {JSX.Element} The rendered podcast card.
+ */
 function PodcastCard({ podcast, onClick }) {
     const formattedDate = format(parseISO(podcast.updated), "MMMM d, yyyy");
 

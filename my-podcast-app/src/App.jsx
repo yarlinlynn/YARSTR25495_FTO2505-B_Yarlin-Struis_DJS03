@@ -5,13 +5,36 @@ import Header from "../components/Header/Header.jsx";
 import PodcastCard from "../components/PodcastCard/PodcastCard";
 import Modal from "../components/PodcastModal/PodcastModal.jsx";
 
-
+/**
+ * The main component that fetches and displays a list of podcasts.
+ * Handles loading, error states, and modal display for individual podcast details.
+ * @returns {JSX.Element} The rendered App component with podcast cards and modal.
+ */
 function App() {
+  /**
+   * State to store the list of podcasts fetched from the API.
+   */
   const [podcasts, setPodcast] = useState([]);
+
+  /**
+   * State to track that podcast data is being fetched.
+   */
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null)
+
+  /**
+   * State to store any error that occurs during the API fetch.
+   */
+  const [error, setError] = useState(null);
+
+  /**
+   * State to manage the podcast modal.
+   */
   const [openModal, setOpenModal] = useState(null)
 
+  /**
+   * Fetches podcast data from the API with a 2-second delay and updates state.
+   * Cleans up the timeout on component unmount to prevent memory leaks.
+   */
   useEffect( () => {
     const fetchPodcasts = async () => {
       try {

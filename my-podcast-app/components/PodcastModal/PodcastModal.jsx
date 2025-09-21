@@ -3,6 +3,14 @@ import { format, parseISO } from "date-fns";
 import { IoCloseOutline } from "react-icons/io5";
 import "../PodcastCard/PodcastCard.css";
 
+/**
+ * Renders a modal displaying details of a selected podcast.
+ * @param {Object} props - Component props.
+ * @param {boolean} props.isOpen - Whether the modal is open.
+ * @param {Object|null} props.podcast - The selected podcast object.
+ * @param {Function} props.onClose - Function to close the modal.
+ * @returns {JSX.Element|null} The rendered modal or null if not open.
+ */
 function Modal( {podcast, onClose} )  {
     if (!podcast) return null;
     const formattedDate = format(parseISO(podcast.updated), "MMMM d, yyyy");
@@ -35,20 +43,6 @@ function Modal( {podcast, onClose} )  {
                 </div>
                 <h3>Seasons {podcast.seasons}</h3>
             </div>
-            {/* <ul id="seasonList" class="season-list">
-                <li class="season-item">
-                    <strong class="season-title">Season 1: Season 1</strong>
-                    <span class="episodes">8 episodes</span>
-                </li>
-                <li class="season-item">
-                    <strong class="season-title">Season 2: Season 2</strong>
-                    <span class="episodes">9 episodes</span>
-                </li>
-                <li class="season-item">
-                    <strong class="season-title">Season 3: Season 3</strong>
-                    <span class="episodes">9 episodes</span>
-                </li>
-            </ul> */}
             </div>
         </section>
     )
