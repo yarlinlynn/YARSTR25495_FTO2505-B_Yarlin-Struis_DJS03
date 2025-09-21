@@ -1,9 +1,10 @@
 import "./PodcastCard.css";
 import getGenreTitles from "../utils/getGenres.js";
+import { format, parseISO } from "date-fns";
 
 
 function PodcastCard({ podcast, onClick }) {
-    // const [openModal, setOpenModal] = useState(false)
+    const formattedDate = format(parseISO(podcast.updated), "MMMM d, yyyy");
 
     return(
         <section className="podcast-card" key={podcast.id} id={podcast.id} onClick={ () => setOpenModal(true)}>
@@ -19,7 +20,7 @@ function PodcastCard({ podcast, onClick }) {
                         </span>
                     ))}
                 </div>
-                <p className="date">Updated: <span>{podcast.updated}</span></p>
+                <p className="date">Updated: <span>{formattedDate}</span></p>
             </div>
         </section>
     )
