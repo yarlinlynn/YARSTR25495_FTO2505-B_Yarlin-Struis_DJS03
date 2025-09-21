@@ -49,6 +49,11 @@ html {
   min-height: 100vh; 
 } */
 
+body {
+  background: var(--black);
+  color: var(--white);
+}
+
 a {
   text-decoration: none;
   color: inherit;

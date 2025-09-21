@@ -1,6 +1,6 @@
 
-header {
-  /* border-bottom: 1px solid var(--medium-grey); */
+/* header {
+  border-bottom: 1px solid var(--medium-grey); 
   padding: 1rem 2rem;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
@@ -44,6 +44,7 @@ header {
 .search-container input {
   border: none;
   width: 400px;
+  background: none;
 }
 
 .browse-btn {
@@ -53,7 +54,7 @@ header {
 }
 
 .profile {
-  background: var(--soft-indigo);
+  background: var(--gray-dark);
   width: 40px;
   height: 40px;
   padding: 10px;
@@ -74,4 +75,30 @@ header {
 .dark-btn { 
   display: none; 
   color: var(--background-light); 
+}
+
+nav {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background: var(--dark-grey);
+  height: 13vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.4rem;
+}
+
+@media (min-width: 1000px) {
+  nav{ display: none; }
+} */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 1px 5px var(--medium-grey);
 }

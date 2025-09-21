@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import Header from "../components/Header/Header.jsx";
-import LibrarySidebar from "../components/Library/MyLibrary.jsx";
+// import LibrarySidebar from "../components/Library/MyLibrary.jsx";
 import PodcastCard from "../components/PodcastCard/PodcastCard";
+// import { IoList } from "react-icons/io5";
 
 
 function App() {
@@ -39,10 +40,15 @@ function App() {
     <Header/>
 
     <main className="main-content">
-      <LibrarySidebar/>
-      
+      {/* <div className="genres-container">
+          <span className="all-genres"></span>
+          <div className="filter">
+            <IoList />
+          </div>
+      </div> */}
 
       <section className="rendered-podcast">
+        
         {loading ? (
           <div className='loading-container'>
             <div>
