@@ -15,9 +15,9 @@ function PodcastCard({ podcast, onClick }) {
                 <p className="podcast-season">Season {podcast.seasons}</p>
                 <div className="genres-list">
                     {getGenreTitles(podcast).map((title, i) => (
-                        <span key={i} className="genre">
+                        <p key={i} className="genre">
                         {title}
-                        </span>
+                        </p>
                     ))}
                 </div>
                 <p className="date">Updated: <span>{formattedDate}</span></p>
